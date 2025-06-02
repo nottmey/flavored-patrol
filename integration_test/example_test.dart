@@ -13,13 +13,15 @@ void main() {
     expect($(#counterText).text, '1');
 
     await $.native.pressHome();
-    await $.native.pressDoubleRecentApps();
+    await $.native.openApp();
 
     expect($(#counterText).text, '1');
     await $(FloatingActionButton).tap();
     expect($(#counterText).text, '2');
 
-    await $.native.openNotifications();
-    await $.native.pressBack();
+    await $.native.pressHome();
+    await $.native.openApp();
+
+    expect($(#counterText).text, '2');
   });
 }
