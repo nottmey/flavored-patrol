@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "com.example.flavored_patrol"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // required by patrol, update if told so in execution (default = flutter.ndkVersion)
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
