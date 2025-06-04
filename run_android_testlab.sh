@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+rm -rf build
+
+patrol build android --target integration_test/example_test.dart
+
 gcloud firebase test android run \
 	--type instrumentation \
 	--app build/app/outputs/apk/debug/app-debug.apk \

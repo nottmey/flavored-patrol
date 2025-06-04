@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+rm -rf build
+
 patrol build ios --target integration_test/example_test.dart --release
 
 pushd build/ios_integ/Build/Products
