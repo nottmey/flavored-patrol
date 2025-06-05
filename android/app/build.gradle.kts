@@ -45,6 +45,25 @@ android {
     testOptions {
         execution = "ANDROIDX_TEST_ORCHESTRATOR"
     }
+
+    flavorDimensions += "default"
+    productFlavors {
+        create("dev") {
+            dimension = "default"
+            applicationId = "com.example.flavored_patrol.dev"
+            resValue("string", "app_name", "[D] Patrol")
+        }
+        create("qa") {
+            dimension = "default"
+            applicationId = "com.example.flavored_patrol.qa"
+            resValue("string", "app_name", "[Q] Patrol")
+        }
+        create("production") {
+            dimension = "default"
+            applicationId = "com.example.flavored_patrol.production"
+            resValue("string", "app_name", "[P] Patrol")
+        }
+    }
 }
 
 flutter {

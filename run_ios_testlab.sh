@@ -3,10 +3,10 @@ set -euo pipefail
 
 rm -rf build
 
-patrol build ios --target integration_test/example_test.dart --release
+patrol build ios --target integration_test/example_test.dart --release --verbose
 
 pushd build/ios_integ/Build/Products
-zip -r ios_tests.zip Release-iphoneos Runner_iphoneos18.5-arm64.xctestrun
+zip -r ios_tests.zip Release-qa-iphoneos qa_iphoneos18.5-arm64.xctestrun
 popd
 
 # use `gcloud firebase test ios models list` to see available models & versions
